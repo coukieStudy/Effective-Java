@@ -25,7 +25,6 @@ public NutritionFacts(int servingSize, int servings, int calories, int fat){
 ### 자바 빈즈 패턴(JavaBeans Pattern)
 - 매개 변수가 없는 생성자로 객체를 만든 후, Setter 메서드를 호출해 원하는 매개변수의 값을 설정하는 방식.
   * setter로 만들면 더이상 점층적 생성자 패턴의 단점(코드 작성/가독성 X)들이 보이지 않는다.
-
 ```java
 NutritionFacts cocaCola = new NutritionFacts();
 cocaCola.setServingSize(240);
@@ -37,7 +36,6 @@ cocaCola.setCarbohydrate(27);
 - 하지만 치명적인 단점: 불변으로 만들 수 없다.
   * 점층적 생성자 패턴에서는 매개변수들이 유효한지를 생성자에서만 확인하면 일관성을 유지할 수 있는데, setter를 사용하면 어디서든지 변경될 여지가 있다.
   * 자바빈즈 패턴에서 불변으로 만들 수 없으며 스레드 안전성을 얻으려면 프로그래머가 추가 작업을 해줘야만 한다.
-
 - 따라서 런타임 오류에 취약하다.
   
 ### 자바 빈즈 패턴이 Thread-safe하지 않은 이유 && 해결책
@@ -47,7 +45,6 @@ cocaCola.setCarbohydrate(27);
 - 해결책
   * synchronized 키워드: 상관없음(가시성 보장)
   * volatile 키워드: 하나의 스레드만 쓰고, 나머지 스레드가 읽기일 경우 (가시성 보장)
-  
 - 참고
   * [Why Java Bean Pattern is not threadsafe](https://stackoverflow.com/questions/44345780/whyjava-bean-pattern-is-not-threadsafe)
   * [자바 volatile 키워드](https://parkcheolu.tistory.com/16)

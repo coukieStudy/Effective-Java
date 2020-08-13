@@ -97,7 +97,8 @@ public Period(Date start, Date end) {
 - 각 계층의 클래스에 관련 빌더를 멤버로 정의하자. 추상 클래스는 추상 빌더를 구체 클래스는 구체 빌더를 갖게 한다.
 ```java
 public abstract class Pizza {
-  public enum Topping { HAM, MUSHROOM, ONION, PEPPER, SAUSAGE } final Set<Topping> toppings;
+  public enum Topping { HAM, MUSHROOM, ONION, PEPPER, SAUSAGE } 
+  final Set<Topping> toppings;
   abstract static class Builder<T extends Builder<T>> { 
     EnumSet<Topping> toppings = EnumSet.noneOf(Topping.class); 
     public T addTopping(Topping topping) {

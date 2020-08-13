@@ -25,9 +25,8 @@ public static Boolean valueOf(){
     - 인스턴스를 미리 만들어 놓거나 새로 생성한 인스턴스를 캐싱하여 재활용하는 식으로 불필요한 객체 생성을 피할 수 있다.
       - 반복되는 요청이 있는 상황에서 성능을 높일 수 있다.
     - <b>인스턴스 통제 클래스</b>: 언제 어느 인스턴스를 살아 있게 할지를 철저하게 통제하는 클래스
-      * 싱글톤 패턴(Item 3), 인스턴스화 불가(Item 4), 불변 값 클래스(Item 17)에서 동치인 인스턴스가 단 하나임을 보장 가능
+      * [싱글톤 패턴](https://github.com/HaeUlNam/TIL/blob/master/DesignPattern/Singleton.md), 인스턴스화 불가(Item 4), 불변 값 클래스(Item 17)에서 동치인 인스턴스가 단 하나임을 보장 가능
       * 플라이웨이트 패턴에 근간이 되며, 열거 타입(Item 34)은 인스턴스가 하나만 만들어짐을 보장한다.
-      * TODO) 위의 내용 정리   
     - 예시: Boolean.valueOf(boolean)
     ```java
     public static final Boolean TRUE = new Boolean(true);

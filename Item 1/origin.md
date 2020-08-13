@@ -13,7 +13,6 @@ public static Boolean valueOf(){
 - 정적 팩터리 메서드는 다음 링크에 있는 팩터리 메서드 패턴과는 다르다. (이름도 비슷하고 둘 다 객체 생성에 관여하기 때문에 둘의 차이점을 알아두는 것 중요할 듯)
   - [디자인 패턴 - Factory Method Pattern1](https://jdm.kr/blog/180)
   - [디자인 패턴 - Factory Method Pattern2](https://beomseok95.tistory.com/244)
-  - TODO) 팩터리 메서드 패턴이 무엇인지 간단 설명.
   
 ### 정적 팩터리 메서드의 장점
 1. 이름을 가질 수 있다.

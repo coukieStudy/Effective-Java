@@ -5,7 +5,7 @@
 - public 생성자와 다르게 아래와 같이 클래스의 인스턴스를 반환하는 정적 메서드를 뜻한다.
 - 아래는 Boolean의 valueOf 예시
 ```java
-public static Boolean valueOf(){
+public static Boolean valueOf(boolean b){
   return b ? Boolean.TRUE: Boolean.FALSE;
 }
 ```
@@ -57,7 +57,7 @@ public static Boolean valueOf(){
     //UnmodifiableMap 개념: https://lng1982.tistory.com/155
     ```
     
-    - TODO) 나아가 정적 팩터리 메서드를 사용하는 클라이언트는 얻은 객체를 인터페이스만으로 다루게 된다.(아이템 64) -> Best Pratice
+    - 나아가 정적 팩터리 메서드를 사용하는 클라이언트는 얻은 객체를 인터페이스만으로 다루게 된다.(아이템 64) -> Best Pratice
     - Java 8부터는 인터페이스가 default 키워드를 이용해서 정적 메서드를 구현할 수 있기에 동반 클래스가 필요 없다.
       - 하지만 public 정적 메서드만 사용할 수 있기에 private을 두려면 private-package나 Java 9를 사용해야 한다.
       - [Java 8 - Interface의 변화](http://happinessoncode.com/2017/04/19/java8-changes-in-interface/)

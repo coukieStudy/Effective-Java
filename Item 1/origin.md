@@ -95,7 +95,7 @@ public static Boolean valueOf(boolean b){
     - JDBC로 예를 든 이유는 getConnection이 호출되었을 때, return되는 객체는 DB Driver(Mysql, Oracle..)마다 다르기 때문.
       * 따라서 새로운 DB가 생기면 가져다가 붙일 수 있다.
     - 서비스 제공자 프레임워크 패턴에는 여러 변형이 존재
-      - Bridge Pattern//TODO
+      - [Bridge Pattern](https://www.slipp.net/wiki/display/SLS/Bridge+Pattern)
       - DI 프레임워크//TODO
       - 자바 5부터는 ServiceLoader가 제공되어 프레임워크를 직접 만들 필요가 없어졌다. JDBC는 자바 5전에 생긴 개념.
  

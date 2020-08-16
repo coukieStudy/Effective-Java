@@ -145,7 +145,7 @@ public class NyPizza extends Pizza {
   * 생성자로서는 누릴 수 없는 이점이다.
 - 빌더 패턴은 상당히 유연하다. 빌더 하나로 여러 객체를 순회하면서 만들 수 있고, 빌더에 넘기는 매개변수에 따라 다른 객체를 만들 수도 있다. 객체마다 부여되는 일련번호와 같은 특정 필드는 빌더가 알아서 만들도록 할 수 있따.
   * 일련번호 같은 경우 Builder에 함수를 만들지 않으면 된다.
-- Pizza.Builder 클래스는 재귀적 타입 한정(Item 30) TODO)
+- Pizza.Builder 클래스는 [재귀적 타입 한정](https://medium.com/@joongwon/java-java%EC%9D%98-generics-604b562530b3)(Item 30)
 
 ### Builder 패턴의 단점
 - 빌더 생성 비용이 크지는 않지만 성능에 민감한 상황에서는 문제가 될 수 있다..(그런 use-case가 있나..)

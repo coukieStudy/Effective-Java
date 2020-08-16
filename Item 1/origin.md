@@ -92,6 +92,8 @@ public static Boolean valueOf(boolean b){
       - Provider Registeration API: DriverManager.registerDriver
       - Service Access API: DriverManager.getConnection
       - Service provider Interface: Driver
+    - JDBC로 예를 든 이유는 getConnection이 호출되었을 때, return되는 객체는 DB Driver(Mysql, Oracle..)마다 다르기 때문.
+      * 따라서 새로운 DB가 생기면 가져다가 붙일 수 있다.
     - 서비스 제공자 프레임워크 패턴에는 여러 변형이 존재
       - Bridge Pattern//TODO
       - DI 프레임워크//TODO

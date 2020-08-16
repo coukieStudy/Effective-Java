@@ -93,6 +93,7 @@ public static Boolean valueOf(boolean b){
       - Service Access API: DriverManager.getConnection
       - Service provider Interface: Driver
     - [JDBC 예시](https://github.com/Java-Bom/ReadingRecord/blob/10bd77f7ecc5417e06a43aa6f637b0815d874737/%EC%9D%B4%ED%8E%99%ED%8B%B0%EB%B8%8C%20%EC%9E%90%EB%B0%94/effectiveJava/src/main/java/item1/jdbc/JdbcSample.java)
+      * oracle의 경우: "oracle.jdbc.driver.OracleDriver"
     - JDBC로 예를 든 이유는 getConnection이 호출되었을 때, return되는 객체는 DB Driver(Mysql, Oracle..)마다 다르기 때문.
       * 따라서 새로운 DB가 생기면 가져다가 붙일 수 있다.
     - 서비스 제공자 프레임워크 패턴에는 여러 변형이 존재

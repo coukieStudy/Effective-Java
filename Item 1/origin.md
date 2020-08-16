@@ -96,7 +96,7 @@ public static Boolean valueOf(boolean b){
       * 따라서 새로운 DB가 생기면 가져다가 붙일 수 있다.
     - 서비스 제공자 프레임워크 패턴에는 여러 변형이 존재
       - [Bridge Pattern](https://www.slipp.net/wiki/display/SLS/Bridge+Pattern)
-      - DI 프레임워크//TODO
+      - [DI 프레임워크](https://www.slipp.net/wiki/pages/viewpage.action?pageId=25527606)
       - 자바 5부터는 ServiceLoader가 제공되어 프레임워크를 직접 만들 필요가 없어졌다. JDBC는 자바 5전에 생긴 개념.
  
 ### 정적 팩토리 메서드의 단점

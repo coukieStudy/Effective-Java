@@ -2,6 +2,7 @@
 
 > ### 클래스가 하나 이상의 자원에 의존하고 사용하는 자원에 따라 동작이 달라지는 경우, <br> 정적 유틸리티 클래스나 싱글턴 방식은 적합하지 않다. <br> 대신 ✨의존 객체 주입 기법✨을 사용하자!
 <br>
+
 ## 자원을 직접 명시하는 경우 🤔
 
 ### 정적 유틸리티 클래스 사용 ([Item04](https://github.com/coukieStudy/Effective-Java/blob/master/item%204/origin.md))

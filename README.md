@@ -12,6 +12,7 @@
 * 1주차(08/13): Harry - Item 1, 2
 * 2주차(08/20): David, Fuzzy - Item 3, 4 
 * 3주차(08/27): Lucy, Jerry - Item 5, 6
+* 3주차(09/03): Harry, Fuzzy - Item 7, 8
 
 
 ## 참고한 스터디 방식

@@ -57,8 +57,18 @@ public class Stack {
   * 객체 참조를 캐시에 넣고 나서, 이 사실을 까맣게 잊은 채 그 객체를 다 쓴 뒤로도 한참을 그냥 놔두는 일을 자주 접할 수 있다.
   * 해결책: 캐시 외부에서 키를 참조하는 동안만 엔트리가 살아 있는 캐시가 필요한 상황이라면 WeakHashMap을 사용해 캐시를 만들자. 다 쓴 엔트리는 그 즉시 자동으로 제거될 것이다.
     - [Java – Collection – Map – WeakHashMap (약한 참조 해시맵)](http://blog.breakingthat.com/2018/08/26/java-collection-map-weakhashmap/)
-    - WeakHashMap Test
+    - [WeakHashMap Test](https://github.com/coukieStudy/Effective-Java/blob/master/item%207/WeakHashMap%20Test.md)
+  * 캐시를 만들 때 보통은 캐시 엔트리의 유효 기간을 정확히 정의하기 어렵기 때문에 시간이 지날수록 엔트리의 가치를 떨어뜨리는 방식을 흔히 사용한다. 이런 방식에서는 쓰지 않는 엔트리를 이따금 청소해줘야 한다.
+    - Scheduled ThreadPoolExecutor 같은 백그라운드 스레드를 활용: 정해진 시간 이후에 cache clean
+    - 캐시에 새 엔트리를 추가할 때 부수 작업으로 수행하는 방법
+      * [LinkedHashMap의 removeEldestEntry](https://www.geeksforgeeks.org/linkedhashmap-removeeldestentry-method-in-java/)    
+- 리스너 혹은 콜백
+  * 클라이언트가 콜백을 등록만 하고 명확히 해지하지 않는다면, 뭔가 조치해주지 않는 한 콜백은 계속 쌓여갈 것이다. 이럴 때 콜백을 약한 참조(Weak reference)로 저장하면 가비지 컬렉터가 즉시 수거해간다.
+  * Android - BroadCast Receiver: 화면이 끝나는 순간 해제를 안하면 memory leak
 
+### 핵심 정리
+- 메모리 누수는 겉으로 잘 드러나지 않아 시스템에 수년간 잠복하는 사례도 있다. 이런 누수는 철저한 코드 리뷰나 힙 프로파일러 같은 디버깅 도구를 동원해야만 발견되기도 한다. 그래서 이런 종류의 문제는 예방법을 
+익혀두는 것이 매우 중요하다.
 
 
 
@@ -66,12 +76,10 @@ public class Stack {
 
 
 ### 추가적인 Dive Deep
-
+- 힙 프로파일러
 - GC 알고리즘
 - 디스크 페이징
 - 왜 배열 크기를 두 배씩 늘릴까?
 - 성능 때문에 매번 gc에 대상이 되도록 하는 것이 좋은 방법은 아닌거 같은데, 위처럼 pop했던 메모리를 재활용하는 방법은 없을까?
   * ArrayList등에 보면 size와 capacity를 나눠서 사용한다.
   * size가 실제 크기, capacity가 할당된 메모리 크기
-
-

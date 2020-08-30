@@ -24,7 +24,7 @@ public class Test {
 }
 ```
 
-- 결과
+- 결과<br>
 ![스크린샷 2020-08-30 오후 7 34 57](https://user-images.githubusercontent.com/26040955/91656927-e4858a00-eaf7-11ea-99c7-a1414952933b.png)
 
 ### WeakHashMap - Integer StrongReference
@@ -37,7 +37,7 @@ public class Test {
 Integer integer1 = 125;
 Integer integer2 = 128;
 ```
-- 결과는 다음과 같다
+- 결과는 다음과 같다<br>
 ![스크린샷 2020-08-30 오후 7 40 36](https://user-images.githubusercontent.com/26040955/91657013-ae94d580-eaf8-11ea-92f1-63d4064bc1f6.png)
 
 
@@ -66,7 +66,7 @@ public class Test {
     }
 }
 ```
-- 결과
+- 결과<br>
 ![스크린샷 2020-08-30 오후 7 42 24](https://user-images.githubusercontent.com/26040955/91657044-eef45380-eaf8-11ea-9520-497b26badfaf.png)
 
 
@@ -95,6 +95,6 @@ public class Test {
     }
 }
 ```
-- 결과
+- 결과<br>
 ![스크린샷 2020-08-30 오후 7 45 56](https://user-images.githubusercontent.com/26040955/91657102-6de98c00-eaf9-11ea-9602-bbd7aa8cd254.png)
 

@@ -76,7 +76,7 @@ public class Stack {
 
 
 ### 추가적인 Dive Deep
-- 힙 프로파일러
+- 힙 프로파일러: https://jupiny.com/2019/07/15/java-heap-dump-analysis/
 - GC 알고리즘
 - 디스크 페이징
 - 왜 배열 크기를 두 배씩 늘릴까?

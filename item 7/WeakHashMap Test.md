@@ -98,3 +98,8 @@ public class Test {
 - 결과<br>
 ![스크린샷 2020-08-30 오후 7 45 56](https://user-images.githubusercontent.com/26040955/91657102-6de98c00-eaf9-11ea-9602-bbd7aa8cd254.png)
 
+
+### TODO) equals 안에 == 이외의 연산자가 있을 때는 weakHashMap에서 weakReference 방법이 통하지 않는다.
+
+### 참고
+- http://blog.breakingthat.com/2018/08/26/java-collection-map-weakhashmap/

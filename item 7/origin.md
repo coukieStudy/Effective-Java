@@ -72,9 +72,7 @@ public class Stack {
 
 ### 추가적인 Dive Deep
 - 힙 프로파일러: https://imasoftwareengineer.tistory.com/4
-- GC 알고리즘
-  * https://d2.naver.com/helloworld/1329
-  * https://stackoverflow.com/questions/33206313/default-garbage-collector-for-java-8
+- GC 알고리즘: https://www.notion.so/Java-GC-7b2beca61d8148b0b8a1f4fa35f8da34
 - 디스크 페이징
 - 왜 배열 크기를 두 배씩 늘릴까?
 - 성능 때문에 매번 gc에 대상이 되도록 하는 것이 좋은 방법은 아닌거 같은데, 위처럼 pop했던 메모리를 재활용하는 방법은 없을까?

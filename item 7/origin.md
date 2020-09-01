@@ -70,14 +70,11 @@ public class Stack {
 - 메모리 누수는 겉으로 잘 드러나지 않아 시스템에 수년간 잠복하는 사례도 있다. 이런 누수는 철저한 코드 리뷰나 힙 프로파일러 같은 디버깅 도구를 동원해야만 발견되기도 한다. 그래서 이런 종류의 문제는 예방법을 
 익혀두는 것이 매우 중요하다.
 
-
-
-
-
-
 ### 추가적인 Dive Deep
 - 힙 프로파일러: https://imasoftwareengineer.tistory.com/4
 - GC 알고리즘
+ * https://d2.naver.com/helloworld/1329
+ * https://stackoverflow.com/questions/33206313/default-garbage-collector-for-java-8
 - 디스크 페이징
 - 왜 배열 크기를 두 배씩 늘릴까?
 - 성능 때문에 매번 gc에 대상이 되도록 하는 것이 좋은 방법은 아닌거 같은데, 위처럼 pop했던 메모리를 재활용하는 방법은 없을까?

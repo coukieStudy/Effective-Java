@@ -27,7 +27,7 @@ public abstract class ImageInputStreamImpl implements ImageInputStream {
 ```
 ## cleaner란?
 - Java 9에서 finalizer는 그 위험성 때문에 deprecated되고 그 대안으로 cleaner가 새로 생겼다.
-- `java.lagn.ref`에 정의된 `Cleaner` 클래스를 말한다.
+- `java.lang.ref`에 정의된 `Cleaner` 클래스를 말한다.
 - Java 9 javadoc의 설명: https://docs.oracle.com/javase/9/docs/api/java/lang/ref/Cleaner.html
 - Cleaner는 등록된 `AutoCloseable` 구현체의 레퍼런스가 없어지면 해당 객체의 cleaning action을 실행하는 역할을 한다.
 ```java
@@ -89,7 +89,7 @@ public static void main(String args[]) {
 - 객체가 소유한 시스템 자원의 해제를 전적으로 finalizer나 cleaner한테 맡기면, 나중에 자원 부족으로 오류가 발생할 수 있다.
 - GC의 동작은 GC 구현에 따라 달라지므로 테스트가 불가능하다.
 ### 호출이 될지도 보장할 수 없다
-- 객체의 레퍼런스가 없어지기 전에 프로그램이 종료거나, GC가 한번도 수행되지 않는다면 finalizer나 cleaner는 수행되지 못한다.
+- 객체의 레퍼런스가 없어지기 전에 프로그램이 종료되거나, GC가 한번도 수행되지 않는다면 finalizer나 cleaner는 수행되지 못한다.
 - DB 트랜잭션과 같이 상태를 영구적으로 수정하는 작업에 매우 위험할 수 있다.
 - 이상한 메서드로 finalizer나 cleaner 호출을 보장하려고 하지 마라
     - `System.gc()`: GC를 수행한다. -> 수집 대상이 아니면 finalizer가 호출되지 않는다.
@@ -170,6 +170,6 @@ public class EvilDatabaseConnector extends DatabaseConnector {
 - `FileInputStream`과 `FileOutputStream` 같은 클래스들은 `close()`와 finalizer가 모두 구현되어 있다.
 ### 네이티브 피어의 회수
 - 네이티브 피어: 자바 객체가 네이티브 메서드를 통해 기능을 위임한 네이티브 객체.
-- 네이티브 메서드: C나 C++ 같은 네이티브 프로그래밍 언어로 작성된 메서드. 자바에서는 JNI (Java Native Interface)라는 것을 통해 자바 프로그램이 네이티브 메스드를 호출할 수 있도록 지원한다 (아이템 66 참고).
+- 네이티브 메서드: C나 C++ 같은 네이티브 프로그래밍 언어로 작성된 메서드. 자바에서는 JNI (Java Native Interface)라는 것을 통해 자바 프로그램이 네이티브 메서드를 호출할 수 있도록 지원한다 (아이템 66 참고).
 - 네이티브 피어는 자바 객체가 아니므로 GC가 회수하지 못한다. 따라서 네이티브 피어와 연결된 자바 객체에 finalizer를 정의하거나 cleaner를 사용해 네이티브 피어를 회수하도록 할 수 있다.
 - 성능 저하를 감당할 수 있을 때에만 사용하자.

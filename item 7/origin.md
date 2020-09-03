@@ -43,7 +43,7 @@ public class Stack {
   elementCount--;
   elementData[elementCount] = null; /* to let gc do its work */
   ```
-  * 다 쓴 참조를 null처리하면 다른 이점도 따라온다. 만약 null처리한 참조를 실수로 사용하려 하면 프로그램은 즉시 NPE(NullPointerException)을 던지면 종료된다. 프로그램 오류는 가능한 한 조기에 발견하는 것이 
+  * 다 쓴 참조를 null처리하면 다른 이점도 따라온다. 만약 null처리한 참조를 실수로 사용하려 하면 프로그램은 즉시 NPE(NullPointerException)을 던지면서 종료된다. 프로그램 오류는 가능한 한 조기에 발견하는 것이 
   좋다.
   * 하지만 모든 객체를 쓰고나자마자 null처리할 필요는 없다. 그러면 코드만 지저분해진다.. 따라서 변수의 범위를 최소가 되게 정의하는 것이 가장 좋은 메모리 해제 방법이다. (지역변수는 괄호가 끝난 후에 메모리가 해제되기 때문이다.)
   

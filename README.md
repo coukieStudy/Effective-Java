@@ -12,8 +12,8 @@
 * 1주차(08/13): Harry - Item 1, 2
 * 2주차(08/20): David, Fuzzy - Item 3, 4 
 * 3주차(08/27): Lucy, Jerry - Item 5, 6
-* 3주차(09/03): Harry, Fuzzy - Item 7, 8
-
+* 4주차(09/03): Harry, Fuzzy - Item 7, 8
+* 5주차(09/10): David, Jerry - Item 9, 10
 
 ## 참고한 스터디 방식
 * 블로그: [자바봄이 이펙티브 자바를 읽는 방법](https://javabom.tistory.com/70)

@@ -19,8 +19,6 @@
 
 ```
   * 다만, 포맷을 명시하면 평생 그 포맷에 얽메이게 되어 유연성이 떨어짐.
-//TODO) toString 예시
-
 
 #### toString이 반환한 값이 포함된 정보를 얻어올 수 있는 API를 제공하자.
 - getter와 같은 것을 제공해서 toString 안에 포함된 각각 정보를 쉽게 가져올 수 있도록 해야 한다는 뜻. 안 그러면 toString을 파싱해야함으로 성능이 떨어지고, 필요하지 않은 작업!
@@ -28,17 +26,32 @@
 #### 정적 유틸리티 클래스나 열거 타입은 toString을 따로 재정의할 필요 없다.
 - name method를 사용하면 해당 enum 값의 이름을 가져올 수 있다.
 - 평소에는 name method나 enum의 다른 필드 getter를 통해서 문자를 사용하기에 필요없다고 생각할 수 있지만, 좀 더 원하는 형식이 있을 경우 toString을 사용할 수 있는 있을 것 같다.
-- 또한 하위 클래스들이 공유해야 할 문자열 표현이 있는 추상 클래스라면 toString을 재정의하는 것이 좋다.
+- 또한 하위 클래스들이 공유해야 할 문자열 표현이 있는 추상 클래스(AbstractMap, AbstractSet)라면 toString을 재정의하는 것이 좋다.
 
 ```java
-//TODO) 컬렉션 구현체 toString 메소드
+//AbstractMap의 toString은 
+public String toString() {
+    Iterator<Entry<K,V>> i = entrySet().iterator();
+    if (! i.hasNext())
+        return "{}";
 
+    StringBuilder sb = new StringBuilder();
+    sb.append('{');
+    for (;;) {
+        Entry<K,V> e = i.next();
+        K key = e.getKey();
+        V value = e.getValue();
+        sb.append(key   == this ? "(this Map)" : key);
+        sb.append('=');
+        sb.append(value == this ? "(this Map)" : value);
+        if (! i.hasNext())
+            return sb.append('}').toString();
+        sb.append(',').append(' ');
+    }
+}
 ```
 
 #### AutoValue는 자동으로 잘 생성해주는 프레임워크이지만, '의미'까지 파악해서 생성해주지는 못한다.
-
-### TODO) AutoValue 사용 && Intellij 사용
-
 
 
   

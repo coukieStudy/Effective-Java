@@ -27,9 +27,10 @@
 - name method를 사용하면 해당 enum 값의 이름을 가져올 수 있다.
 - 평소에는 name method나 enum의 다른 필드 getter를 통해서 문자를 사용하기에 필요없다고 생각할 수 있지만, 좀 더 원하는 형식이 있을 경우 toString을 사용할 수 있는 있을 것 같다.
 - 또한 하위 클래스들이 공유해야 할 문자열 표현이 있는 추상 클래스(AbstractMap, AbstractSet)라면 toString을 재정의하는 것이 좋다.
+![스크린샷 2020-09-13 오후 11 06 15](https://user-images.githubusercontent.com/26040955/93020006-bcc51480-f615-11ea-8dc7-97c11b43203d.png)
 
 ```java
-//AbstractMap의 toString은 
+//AbstractMap의 toString
 public String toString() {
     Iterator<Entry<K,V>> i = entrySet().iterator();
     if (! i.hasNext())
@@ -53,6 +54,6 @@ public String toString() {
 
 #### AutoValue는 자동으로 잘 생성해주는 프레임워크이지만, '의미'까지 파악해서 생성해주지는 못한다.
 
-
+- AutoValue: https://www.baeldung.com/introduction-to-autovalue
   
 

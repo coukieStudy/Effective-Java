@@ -84,8 +84,9 @@ public int hashCode() {
 ## 3. 참고
 
 - Item10 AutoValue 프레임워크를 사용하면 equals와 hashCode를 자동으로 잘 만들어준다.
-- 해시 충돌이 더 적은 방법을 꼭 써야한다면 구아바[Guava]의 com.google.common.hash.Hashing을 참고해라.
-- Objects.hash() : 임의의 개수만큼 객체를 받아 hashCode를 계산한다. 속도는 더 느리다.
+- 해시 충돌이 더 적은 방법을 꼭 써야한다면 구아바[Guava]의 com.google.common.hash.Hashing을 참고해라.<br>
+https://docs.google.com/spreadsheets/d/1_q2EVcxA2HjcrlVMbaqXwMj31h9M5-Bqj_m8vITOwwk/edit#gid=0
+- Objects.hash() : 임의의 개수만큼 객체를 받아 hashCode를 계산한다. 속도는 더 느리다.<br>
 ex) return Objects.hash(areaCode, prefix, lineNum);
 - 클래스가 불변이고 해시코드 계산 비용이 크다면 매번 새로 계산하기보다 캐싱을 고려하자.
 

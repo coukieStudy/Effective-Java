@@ -18,6 +18,7 @@
 * 7주차(09/24): David, Fuzzy - Item 13, 14
 * 8주차(10/15): Lucy, Jerry, Harry, David - Item 15, 16, 17, 18
 * 9주차(10/22): Lucy, Harry - Item 19, 20
+* 10주차(10/29): Jerry, Fuzzy - Item 21, 22
 
 ## Effective Java Source Code
 - https://github.com/jbloch/effective-java-3e-source-code

@@ -2,9 +2,9 @@
 
 ## 용어 정리
 
-- `Generic Class / Generic Interface` : 클래스 / 인터페이스 선언에 타입 매개변수가 쓰인 경우 (ex) List<E>
+- `Generic Class / Generic Interface` : 클래스 / 인터페이스 선언에 타입 매개변수가 쓰인 경우 (ex) List\<E\>
 - `Generic Type` : Generic Class or Generic Infterface 
-- `Parameterized Type` : 실제 타입 매개변수들이 나열된 경우 (ex) List<String>
+- `Parameterized Type` : 실제 타입 매개변수들이 나열된 경우 (ex) List\<String\>
 - `Raw Type` : (ex) List
 
 ## Raw Type의 문제점과 존재 이유
@@ -51,6 +51,6 @@ Collection<?>에는 (null 외에는) 어떤 원소도 넣을 수 없다. 따라�
 
 1. class 리터럴에는 Raw Type을 사용한다. 자바 명세는 class 리터럴에 매개변수화 타입을 사용하지 못하게 했다(배열과 기본타입은 허용한다).<br>
 ex) List.class, String[].class (O)<br>
-List<String>.class, List<?>.class (X)
+List\<String\>.class, List<?>.class (X)
 
 2. instanceof는 로타입이든 비한정적 와일드 카드 타입이든 완전히 똑같이 동작하므로 차라리 로타입을 쓴다.

@@ -19,8 +19,22 @@ ol.add("타입이 달라 넣을 수 없다.");
 ```
 
 두 번째 주요 차이로, 배열은 실체화(reify)된다.
-무슨 뜻인고 하니, 배열은 런타임에도 자신이 담기로 한 원소의 타입을 인지하고 확인한다.
-
+다시말해, 배열은 런타임에도 자신이 담기로 한 원소의 타입을 인지하고 확인한다.
+반면, 제네릭은 타입 정보가 런타임에는 소거 (erasure)된다.
 
 **이상의 주요 차이로 인해 배열과 제네릭은 잘 어우러지지 못한다.**
 제네릭 배열을 만들지 못하게 막은 이유는 타입 안전하지 않기 때문
+
+
+제네릭 배열 생성을 허용하지 않는 이유
+```java
+List<String>[] stringLists = new List<String>[1];
+List<Integer> intList = List.of(42);
+Object[] objects = stringLists;
+objects[0] = intList;
+String s = stringLists[0].get(0);
+```
+
+무슨 말인지 모르겠다....
+
+

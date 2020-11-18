@@ -71,6 +71,7 @@ public static <E extends Comparable<E>> E max1(List<E> list)
 public static <E extends Comparable<? super E>> E max2(List<? extends E> list) 
 ```
 입력 매개변수에의 적용: 'E 의 List' 뿐만 아니라 'E의 하위타입의 List'도 parameter로 받을 수 있게 확장
+
 타입 매개변수에의 적용: 원래는 Comparable 을 직접 구현한 class (E)만 타입 매개변수로 받을 수 있었지만, Comparable을 직접 구현하지 않은 클래스더라도, 상위 클래스에서 Comparable을 구현한 클래스도 타입 매개변수가 될 수 있다.
 
 ```java

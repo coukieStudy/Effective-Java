@@ -4,7 +4,8 @@
 ***
 매개변수화 타입은 불공변(invariant)이다.
 
-Type1과 Type2가 있을 때 List<Type1>과 List<Type2>는 상위/하위 타입도 아니다. 바로 그 점 때문에 유연성이 부족할 때도 있다.
+Type1과 Type2가 있을 때 ```List<Type1>과 List<Type2>```
+는 상위/하위 타입도 아니다. 바로 그 점 때문에 유연성이 부족할 때도 있다.
 
 
 ```java
@@ -17,7 +18,7 @@ Stack<Number> numberStack = new Stack<>();
 Iterable<Integer> integers = ...;
 numberStack.pushAll(integers);
 ```
-위 코드는 컴파일 오류가 난다. Iterable<Integers> 가 Iterable<Number>에 대입될 수 없기 때문이다.
+위 코드는 컴파일 오류가 난다. ```Iterable<Integers> 가 Iterable<Number>```에 대입될 수 없기 때문이다.
 
 pushAll()의 입력 매개변수 타입은 'E의 iterable'이 아니라 'E의 하위 타입의 iterable'이어야 위의 상황이 해결되며, 이를 해결하기 위한 코드가
 ```java
@@ -33,7 +34,7 @@ public void popAll(Collection<E> dst) {
 }
 ````
 
-위의 코드에서 Stack<Number>에서 원소를 뽑아서 Collection<Objects>에 넣고 싶지만, 동일한 이유로 popAll()의 매개변수로 Collection<Objects>를 넣을 수 없다.
+위의 코드에서 ```Stack<Number>```에서 원소를 뽑아서 ```Collection<Objects>```에 넣고 싶지만, 동일한 이유로 popAll()의 매개변수로 ```Collection<Objects>```를 넣을 수 없다.
 popAll()의 입력 매개변수 타입은 'E의 Collection'이 아니라 'E의 상위타입의 Collection'이어야 위의 상황이 해결되며, 이를 해결하기 위한 코드가
 ```java
 popAll(Collection <? super E>)

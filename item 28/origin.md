@@ -24,17 +24,71 @@ ol.add("타입이 달라 넣을 수 없다.");
 
 **이상의 주요 차이로 인해 배열과 제네릭은 잘 어우러지지 못한다.**
 제네릭 배열을 만들지 못하게 막은 이유는 타입 안전하지 않기 때문
-
+new List<E>[], new List<String>[], new E[] 식으로 작성하면 컴파일 오류.
 
 제네릭 배열 생성을 허용하지 않는 이유
 ```java
 List<String>[] stringLists = new List<String>[1];
 List<Integer> intList = List.of(42);
 Object[] objects = stringLists;
-objects[0] = intList;
+objects[0] = intList;  // 제네릭은 소거 방식으로 구현되어서 이 역시 성공한다.
 String s = stringLists[0].get(0);
 ```
 
-무슨 말인지 모르겠다....
-
-
+배열로 형변환할 때 제네릭 배열 생성 오류나 비검사 형변환 경고가 뜨는 경 우 대부분은 배열인 E[] 대신 컬렉션인 List<E>를 사용하면 해결된다.
+코드가 조금 복잡해지고 성능이 살짝 나빠질 수도 있지만, 그 대신 타입 안전성과 상 호운용성은 좋아진다.
+  
+```java  
+public class Chooser {
+  private final Object[] choiceArray;
+  
+  public Chooser(Collection choices) {
+    choiceArray = choices.toArray();
+  }
+  public Object choose() {
+    Random rnd = ThreadLocalRandom.current();
+    return choiceArray[rnd.nextInt(choiceArray.length)];
+  }
+}
+```
+```java  
+public class Chooser<T> {
+  private final T[] choiceArray;
+  
+  public Chooser(Collection<T> choices) {
+    choiceArray = choices.toArray();
+  }
+  public Object choose() {
+    Random rnd = ThreadLocalRandom.current();
+    return choiceArray[rnd.nextInt(choiceArray.length)];
+  }
+}
+```
+제네릭 사용
+```java  
+public class Chooser<T> {
+  private final T[] choiceArray;
+  
+  public Chooser(Collection<T> choices) {
+    choiceArray = (T[])choices.toArray();
+  }
+  public Object choose() {
+    Random rnd = ThreadLocalRandom.current();
+    return choiceArray[rnd.nextInt(choiceArray.length)];
+  }
+}
+```
+경고 발생
+```java  
+public class Chooser<T> {
+  private final List<T> choiceArray;
+  
+  public Chooser(Collection<T> choices) {
+    choiceList = new ArrayList<>(choices);
+  }
+  public Object choose() {
+    Random rnd = ThreadLocalRandom.current();
+    return choiceList.get(rnd.nextInt(choiceList.size()));
+  }
+}
+```

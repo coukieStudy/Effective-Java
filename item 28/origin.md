@@ -51,19 +51,6 @@ public class Chooser {
   }
 }
 ```
-```java  
-public class Chooser<T> {
-  private final T[] choiceArray;
-  
-  public Chooser(Collection<T> choices) {
-    choiceArray = choices.toArray();
-  }
-  public Object choose() {
-    Random rnd = ThreadLocalRandom.current();
-    return choiceArray[rnd.nextInt(choiceArray.length)];
-  }
-}
-```
 제네릭 사용
 ```java  
 public class Chooser<T> {
@@ -79,6 +66,16 @@ public class Chooser<T> {
 }
 ```
 경고 발생
+
+Chooser.java:9: warning: [unchecked] unchecked cast
+        choiceArray = (T[])choices.toArray();
+                                          ^
+  required: T[], found: Object[]  
+  where T is a type-variable:
+T extends Object declared in class Chooser
+
+T가 무슨 타입인지 알 수 없으니 컴파일러는 이 형변환이 런타임에도 안전한지 보장할 수 없다는 메시지다.
+
 ```java  
 public class Chooser<T> {
   private final List<T> choiceArray;
@@ -92,3 +89,4 @@ public class Chooser<T> {
   }
 }
 ```
+List

@@ -21,7 +21,10 @@
 * 10주차(10/29): Jerry, Fuzzy - Item 21, 22
 * 11주차(11/05): David, Fuzzy - Item 23, 24
 * 12주차(11/12): Lucy, Jerry - Item 25, 26, 27, 28
-* 13주차(11/19): Harry, David - Item 29, 30, 31, 32(Optional)
+* 13주차(11/19): Harry, David - Item 29, 30, 31
+* 14주차(11/26): Fuzzy, Lucy - Item 32, 33, 34
+* 15주차(12/3): Jerry, Harry - Item 35, 36, 37, 38, 39
+* 16주차(12/10): David, Fuzzy
 
 
 ## Effective Java Source Code

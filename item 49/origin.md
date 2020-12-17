@@ -57,9 +57,9 @@ java 9의 **checkFromIndexSize, checkFromToIndex, checkIndex** : 범위 검사 �
 
 ### public이 아닌 메서드라면 assert(단언문)을 사용한 검사
 
-[자바에서 Assert 사용하기](!https://offbyone.tistory.com/294)
+[자바에서 Assert 사용하기](https://offbyone.tistory.com/294)
 
-[Assertions In Java – Java Assert Tutorial With Code Examples](!https://www.softwaretestinghelp.com/assertions-in-java/)
+[Assertions In Java – Java Assert Tutorial With Code Examples](https://www.softwaretestinghelp.com/assertions-in-java/)
 
 ```java
 // 재귀 정렬용 private 도우미 함수

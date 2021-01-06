@@ -27,7 +27,7 @@
 * 16주차(12/10): David, Fuzzy
 * 17주차(12/17): Lucy, Jerry - Item 47, 48, 49, 50, 51, 52
 * 18주차(12/23): Harry, David - Item 53, 54, 55, 56, 57, 58
-* 19주차: Fuzzy, Lucy - 
+* 19주차: Fuzzy, Lucy - Item 59 ~ Item 68
 
 
 ## Effective Java Source Code

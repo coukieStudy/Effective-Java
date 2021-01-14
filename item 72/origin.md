@@ -15,3 +15,5 @@
 6.ConcurrentModificationException-> 동시수정이 발생했을때
 
 **Exception**, **RuntimeException**, **Throwable**, **Error**는 직접 재사용하지 말자. 이 클래스들은 추상 클래스라고 생각하길 바란다.
+
+일반적인 규칙 : 인수 값이 무엇이었든 어차피 실패했을 거라면 IllegalStateException을, 그렇지 않으면 IllegalArgumentException 을 던지자.

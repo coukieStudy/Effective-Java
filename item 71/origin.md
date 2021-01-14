@@ -9,4 +9,22 @@
 
 위 두가지 상황이 아닐 경우는 비검사 예외를 사용하자.
 
-검사 예외를 회피하는 방법으론 Optinal값 제공, 상태검사(if),의존 메서드 제공등이 있다.
+검사 예외를 회피하는 방법으론 Optinal값 제공, 상태검사,의존 메서드 제공등이 있다.
+
+상태검사 refactoring의 예
+```java
+try {
+  obj.action(args);
+} catch (TheCheckedException e) {
+	... // 예외 상황에 대처한다. 
+}
+```
+
+```java
+if (obj.actionPermitted(args)) {
+  obj.action(args);
+} else {
+	... // 예외 상황에 대처한다. 
+}
+```
+
